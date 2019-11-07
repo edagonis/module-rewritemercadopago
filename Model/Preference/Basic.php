@@ -40,7 +40,7 @@ const ALL_STATES = array(
 const MAPPED_REGIONS = array(
     0 => array(
         'name' => 'Sul',
-        'states' => ['teste', 'wtf']
+        'states' => ['Santa Catarina', 'Rio Grande do Sul']
     )
 );
 
@@ -55,6 +55,7 @@ class Basic extends \MercadoPago\Core\Model\Preference\Basic
     {
         $config = parent::getConfig();
 
+        var_dump($this->getOrderInfo());die;
         var_dump(MAPPED_REGIONS);die;
         var_dump($this->_scopeConfig->getValue(PATH_TITLE, ScopeInterface::SCOPE_STORE));die;
         
