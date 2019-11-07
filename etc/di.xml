@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MercadoPago\Core\Model\Preference\Basic" type="Avanti\RewriteMercadoPago\Model\Preference\Basic" />
+    <preference for="MercadoPago\Core\Model\Core" type="Avanti\RewriteMercadoPago\Model\Core" />
 </config>
