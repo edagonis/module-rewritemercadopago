@@ -10,10 +10,14 @@
             <tab>avanti</tab>
             <resource>Avanti_RewriteMercadoPago::rewritemercadopago_config</resource>
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>General Configuration</label>
-                <field id="auth_token" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Authentication Token</label>
-                    <comment>Token de autenticação da conta do Mercado Pago</comment>
+                <label>Credenciais</label>
+                <field id="auth_token_region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token de autenticação (Regiões: sul, sudeste)</label>
+                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
+                </field>
+                <field id="auth_token_region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token de autenticação (Regiões: norte, nordeste)</label>
+                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
                 </field>
                 <!-- <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Module Title</label>
