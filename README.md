@@ -2,7 +2,7 @@
 
 Magento 2 module that rewrites the MercadoPago/Core module
 
-Current it is enhancing the default configs, by allowing more authentication configurations on the admin panel
+Currently it is enhancing the default configs, by allowing more authentication configurations on the admin panel
 
 ## installation
 
