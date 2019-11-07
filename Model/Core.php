@@ -57,21 +57,9 @@ class Core extends \MercadoPago\Core\Model\Core
      */
     public function postPaymentV1($preference)
     {
-        //get access_token
-        if (!$this->_accessToken) {
-            $this->_accessToken = $this->_scopeConfig->getValue(\MercadoPago\Core\Helper\ConfigData::PATH_ACCESS_TOKEN, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        }
-        
-        $this->_coreHelper->log("Access Token for Post", 'mercadopago-custom.log', $this->_accessToken);
+        $this->_accessToken = 'TESTE';
 
-        $this->_coreHelper->log("Using post payment rewrite", 'mercadopago-custom.log');
-
-        var_dump($this->_scopeConfig->getValue(PATH_TITLE, ScopeInterface::SCOPE_STORE));die;
-
-        //set sdk php mercadopago
-        $mp = $this->_coreHelper->getApiInstance($this->_accessToken);
-
-        $response = $mp->post("/v1/payments", $preference);
+        $response = parent::postPaymentV1($preference);
 
         return $response;
     }
