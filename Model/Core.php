@@ -10,7 +10,7 @@ const STATES_BY_REGIONS = array(
     ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO"],
     ["MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR"],
     ["RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
-)
+);
 
 const MAPPED_CREDENTIALS_PATH_BY_STATE = array(
     'auth_token_region1' => STATES_BY_REGIONS[0],
@@ -35,9 +35,9 @@ class Core extends \MercadoPago\Core\Model\Core
         if (!array_key_exists('payer', $preference) || !array_key_exists('address', $preference['payer'])) return false;
 
         $address = $preference['payer']['address'];
-        $state = $address['federal_unit'] ?: false
+        $state = $address['federal_unit'] ?: false;
 
-        if (!$state) return false
+        if (!$state) return false;
 
         /**
          * Finds the path to an access token based on a address state
@@ -52,9 +52,8 @@ class Core extends \MercadoPago\Core\Model\Core
 
         $accessToken = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . $accessTokenPath, ScopeInterface::SCOPE_STORE);
 
-        $this->_coreHelper->log("Access token from customer address - ", 'mercadopago-custom.log', $accessToken);
+        $this->_coreHelper->log("Access token from customer address", 'mercadopago-custom.log', $accessToken);
 
-        die('wtf');
         return $accessToken;
     }
 
@@ -70,8 +69,6 @@ class Core extends \MercadoPago\Core\Model\Core
     public function postPaymentV1($preference)
     {
         $this->_accessToken = $this->getAccessTokenFromCustomerAddress($preference);
-
-        $this->_coreHelper->log("Access Token for Post from rewrite - ", 'mercadopago-custom.log', $this->_accessToken);
 
         $response = parent::postPaymentV1($preference);
 

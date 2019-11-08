@@ -23,14 +23,6 @@
                     <label>Token de autenticação (Região 3)</label>
                     <comment>Token de autenticação da conta do Mercado Pago.</comment>
                 </field>
-                <!-- <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Module Title</label>
-                    <comment>This text will be used later.</comment>
-                </field>
-                <field id="custom_select" translate="label comment" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Custom Select</label>
-                    <source_model>Avanti\RewriteMercadoPago\Model\Select</source_model>
-                </field> -->
             </group>
         </section>
     </system>
