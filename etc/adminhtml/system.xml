@@ -12,11 +12,15 @@
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Credenciais</label>
                 <field id="auth_token_region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Token de autenticação (Regiões: sul, sudeste)</label>
+                    <label>Token de autenticação (Região 1)</label>
                     <comment>Token de autenticação da conta do Mercado Pago.</comment>
                 </field>
                 <field id="auth_token_region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Token de autenticação (Regiões: norte, nordeste)</label>
+                    <label>Token de autenticação (Região 2)</label>
+                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
+                </field>
+                <field id="auth_token_region3" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token de autenticação (Região 3)</label>
                     <comment>Token de autenticação da conta do Mercado Pago.</comment>
                 </field>
                 <!-- <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">

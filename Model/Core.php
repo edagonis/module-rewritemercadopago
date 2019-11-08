@@ -27,7 +27,7 @@ class Core extends \MercadoPago\Core\Model\Core
      * 
      * @return string||boolean
      */
-    public function getAccessToken($preference)
+    public function getAccessTokenFromCustomerAddress($preference)
     {
         /**
          * Does nothing if there is no address key on the preference
@@ -38,8 +38,6 @@ class Core extends \MercadoPago\Core\Model\Core
         $state = $address['federal_unit'] ?: false
 
         if (!$state) return false
-
-        $this->_coreHelper->log("Preference address federal_unit - ", 'mercadopago-custom.log', $state);
 
         /**
          * Finds the path to an access token based on a address state
@@ -53,6 +51,8 @@ class Core extends \MercadoPago\Core\Model\Core
         }
 
         $accessToken = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . $accessTokenPath, ScopeInterface::SCOPE_STORE);
+
+        $this->_coreHelper->log("Access token from customer address - ", 'mercadopago-custom.log', $accessToken);
 
         die('wtf');
         return $accessToken;
@@ -69,7 +69,7 @@ class Core extends \MercadoPago\Core\Model\Core
      */
     public function postPaymentV1($preference)
     {
-        $this->_accessToken = $this->getAccessToken($preference);
+        $this->_accessToken = $this->getAccessTokenFromCustomerAddress($preference);
 
         $this->_coreHelper->log("Access Token for Post from rewrite - ", 'mercadopago-custom.log', $this->_accessToken);
 
