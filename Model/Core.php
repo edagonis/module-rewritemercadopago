@@ -44,7 +44,7 @@ class Core extends \MercadoPago\Core\Model\Core
          */
         $accessTokenPath = null;
         foreach(MAPPED_CREDENTIALS_PATH_BY_STATE as $path => $states) {
-            if (array_search('SC', $states) !== false) {
+            if (array_search($state, $states) !== false) {?}
                 $accessTokenPath = $path;
                 break;
             }
