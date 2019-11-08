@@ -46,7 +46,6 @@ const MAPPED_REGIONS = array(
 
 class Basic extends \MercadoPago\Core\Model\Preference\Basic
 {
-
     /**
      * @return array
      * @throws Exception
