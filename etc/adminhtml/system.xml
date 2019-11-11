@@ -8,21 +8,44 @@
             <class>separator-top</class>
             <label>Mercado Pago</label>
             <tab>avanti</tab>
-            <resource>Avanti_RewriteMercadoPago::rewritemercadopago_config</resource>
-            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+            <resource>Avanti_RewriteMercadoPago::system_config</resource>
+            <group id="authentication" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Credenciais</label>
-                <field id="auth_token_region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Token de autenticação (Região 1)</label>
-                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
-                </field>
-                <field id="auth_token_region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Token de autenticação (Região 2)</label>
-                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
-                </field>
-                <field id="auth_token_region3" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Token de autenticação (Região 3)</label>
-                    <comment>Token de autenticação da conta do Mercado Pago.</comment>
-                </field>
+                <group id="region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Região 1</label>
+                    <field id="auth_token_region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Token de autenticação (Região 1)</label>
+                        <comment><![CDATA[Token de autenticação da conta do Mercado Pago. Clique <a href="https://www.mercadopago.com/mlb/account/credentials" target="_blank">aqui</a> para pegar seu Access token]]></comment>
+                    </field>
+                    <field id="states_region1" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Estados (Região 1)</label>
+                        <comment>Estados que devem usar o token da região 1. Forma de escrita em siglas, separado por vírgula. Exemplo: AC,AL,AM,AP</comment>
+                    </field>
+                </group>
+
+                <group id="region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Região 2</label>
+                    <field id="auth_token_region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Token de autenticação (Região 2)</label>
+                        <comment><![CDATA[Token de autenticação da conta do Mercado Pago. Clique <a href="https://www.mercadopago.com/mlb/account/credentials" target="_blank">aqui</a> para pegar seu Access token]]></comment>
+                    </field>
+                    <field id="states_region2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Estados (Região 2)</label>
+                        <comment>Estados que devem usar o token da região 2. Forma de escrita em siglas, separado por vírgula. Exemplo: AC,AL,AM,AP</comment>
+                    </field>
+                </group>
+
+                <group id="region3" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Região 3</label>
+                    <field id="auth_token_region3" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Token de autenticação (Região 3)</label>
+                        <comment><![CDATA[Token de autenticação da conta do Mercado Pago. Clique <a href="https://www.mercadopago.com/mlb/account/credentials" target="_blank">aqui</a> para pegar seu Access token]]></comment>
+                    </field>
+                    <field id="states_region3" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Estados (Região 3)</label>
+                        <comment>Estados que devem usar o token da região 3. Forma de escrita em siglas, separado por vírgula. Exemplo: AC,AL,AM,AP</comment>
+                    </field>
+                </group>
             </group>
         </section>
     </system>

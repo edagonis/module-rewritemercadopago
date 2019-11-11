@@ -6,18 +6,6 @@ use Magento\Store\Model\ScopeInterface;
 
 const ADMIN_CREDENTIALS_PATH = 'rewritemercadopago/general/';
 
-const STATES_BY_REGIONS = array(
-    ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO"],
-    ["MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR"],
-    ["RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
-);
-
-const MAPPED_CREDENTIALS_PATH_BY_STATE = array(
-    'auth_token_region1' => STATES_BY_REGIONS[0],
-    'auth_token_region2' => STATES_BY_REGIONS[1],
-    'auth_token_region3' => STATES_BY_REGIONS[2]
-);
-
 class Core extends \MercadoPago\Core\Model\Core
 {
     /**
@@ -40,11 +28,24 @@ class Core extends \MercadoPago\Core\Model\Core
         if (!$state) return false;
 
         /**
+         * Merges states added on admin configuration into credentials paths
+         */
+        $mappedCredentialsByState = array();
+        for($i = 0; $i <= 2; $i++) {
+            $regionStates = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . 'states_region' . $i, ScopeInterface::SCOPE_STORE);
+            $regionStatesArray = explode(',', trim($regionStates));
+
+            $mappedCredentialsByState['auth_token_region' . $i] = $regionStatesArray;
+        }
+
+        $this->_coreHelper->log("mappedCredentialsByState", 'mercadopago-custom.log', $mappedCredentialsByState);
+
+        /**
          * Finds the path to an access token based on a address state
          */
         $accessTokenPath = null;
-        foreach(MAPPED_CREDENTIALS_PATH_BY_STATE as $path => $states) {
-            if (array_search($state, $states) !== false) {?}
+        foreach($mappedCredentialsByState as $path => $states) {
+            if (array_search($state, $states) !== false) {
                 $accessTokenPath = $path;
                 break;
             }
