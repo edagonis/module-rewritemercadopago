@@ -31,7 +31,7 @@ class Core extends \MercadoPago\Core\Model\Core
          * Merges states added on admin configuration into credentials paths
          */
         $mappedCredentialsByState = array();
-        for($i = 0; $i <= 2; $i++) {
+        for($i = 1; $i <= 3; $i++) {
             $regionStates = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . 'region' . $i . '/states', ScopeInterface::SCOPE_STORE);
             $regionStatesArray = explode(',', trim($regionStates));
 
