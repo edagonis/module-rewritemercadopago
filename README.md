@@ -16,3 +16,6 @@ Currently it is enhancing the default configs, by allowing more authentication c
 
 - Clean cache
 
+## anotations
+
+- To see which account the order has been connected to, check the response from the orders API, inside `payment.additional_information` and search for `collector_id`
