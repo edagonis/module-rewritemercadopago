@@ -4,7 +4,7 @@ namespace Avanti\RewriteMercadoPago\Model;
 
 use Magento\Store\Model\ScopeInterface;
 
-const ADMIN_CREDENTIALS_PATH = 'rewritemercadopago/general/';
+const ADMIN_CREDENTIALS_PATH = 'rewritemercadopago/authentication/';
 
 class Core extends \MercadoPago\Core\Model\Core
 {
@@ -32,10 +32,10 @@ class Core extends \MercadoPago\Core\Model\Core
          */
         $mappedCredentialsByState = array();
         for($i = 0; $i <= 2; $i++) {
-            $regionStates = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . 'states_region' . $i, ScopeInterface::SCOPE_STORE);
+            $regionStates = $this->_scopeConfig->getValue(ADMIN_CREDENTIALS_PATH . 'region' . $i . '/states', ScopeInterface::SCOPE_STORE);
             $regionStatesArray = explode(',', trim($regionStates));
 
-            $mappedCredentialsByState['auth_token_region' . $i] = $regionStatesArray;
+            $mappedCredentialsByState['region' . $i . '/auth_token'] = $regionStatesArray;
         }
 
         $this->_coreHelper->log("mappedCredentialsByState", 'mercadopago-custom.log', $mappedCredentialsByState);
@@ -55,6 +55,7 @@ class Core extends \MercadoPago\Core\Model\Core
 
         $this->_coreHelper->log("Access token from customer address", 'mercadopago-custom.log', $accessToken);
 
+        die('wtf');
         return $accessToken;
     }
 
