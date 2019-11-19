@@ -55,7 +55,6 @@ class Core extends \MercadoPago\Core\Model\Core
 
         $this->_coreHelper->log("Access token from customer address", 'mercadopago-custom.log', $accessToken);
 
-        die('wtf');
         return $accessToken;
     }
 
